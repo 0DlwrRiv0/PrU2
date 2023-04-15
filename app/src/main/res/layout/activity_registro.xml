@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registro"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/fondos">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/cusedittext"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/registroText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registro"
+                android:textAlignment="center"
+                android:textColor="@color/blue"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+            
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/nombreID"
+                android:background="@drawable/cusedittext"
+                android:layout_marginTop="30dp"
+                android:padding="8dp"
+                android:hint="Nombre"
+                android:drawableLeft="@drawable/baseline_person_24"
+                android:textColor="@color/black"
+                android:drawablePadding="12dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/usuarioID"
+                android:background="@drawable/cusedittext"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:hint="Usuario"
+                android:drawableLeft="@drawable/baseline_person_24"
+                android:textColor="@color/black"
+                android:drawablePadding="12dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/passwordID"
+                android:background="@drawable/cusedittext"
+                android:layout_marginTop="20dp"
+                android:inputType="textPassword"
+                android:padding="8dp"
+                android:hint="Contraseña"
+                android:drawableLeft="@drawable/baseline_lock_24"
+                android:textColor="@color/black"
+                android:drawablePadding="12dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/emailID"
+                android:background="@drawable/cusedittext"
+                android:layout_marginTop="20dp"
+                android:inputType="textEmailAddress"
+                android:padding="8dp"
+                android:hint="Correo"
+                android:drawableLeft="@drawable/baseline_alternate_email_24"
+                android:textColor="@color/black"
+                android:drawablePadding="12dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/numeroID"
+                android:background="@drawable/cusedittext"
+                android:layout_marginTop="20dp"
+                android:inputType="number"
+                android:padding="8dp"
+                android:hint="Número"
+                android:drawableLeft="@drawable/baseline_local_phone_24"
+                android:textColor="@color/black"
+                android:drawablePadding="12dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/edadID"
+                android:background="@drawable/cusedittext"
+                android:layout_marginTop="20dp"
+                android:inputType="numberSigned"
+                android:padding="8dp"
+                android:hint="Edad"
+                android:drawableLeft="@drawable/baseline_calendar_month_24"
+                android:textColor="@color/black"
+                android:drawablePadding="12dp"/>
+
+            <TextView
+                android:id="@+id/generoText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Género:"
+                android:textColor="#585858"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="18dp"
+                android:textSize="18sp"
+                android:paddingTop="3dp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:background="@drawable/cusedittext">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mujer"
+                    android:layout_marginLeft="12dp"
+                    android:paddingRight="30dp"
+                    android:textSize="16sp"
+                    android:textColor="#585858"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hombre"
+                    android:textSize="16sp"
+                    android:textColor="#585858"/>
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/guardarID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="@color/blue"
+                android:text="Guardar"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                app:cornerRadius="20dp" />
+
+            <Button
+                android:id="@+id/IniciarID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#115174"
+                android:text="Iniciar sesión"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                app:cornerRadius="20dp" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
