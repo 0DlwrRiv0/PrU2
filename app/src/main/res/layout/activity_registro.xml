@@ -128,7 +128,7 @@
                 android:background="@drawable/cusedittext">
 
                 <RadioButton
-                    android:id="@+id/radioButton"
+                    android:id="@+id/rb1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Mujer"
@@ -138,7 +138,7 @@
                     android:textColor="#585858"/>
 
                 <RadioButton
-                    android:id="@+id/radioButton2"
+                    android:id="@+id/rb2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Hombre"
