@@ -22,38 +22,30 @@
             android:layout_gravity="center_horizontal"
             android:background="@drawable/cusedittext"
             android:orientation="vertical"
-            android:padding="24dp">
-
-            <TextView
-                android:id="@+id/cont"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tus contraseñas"
-                android:textAlignment="center"
-                android:textColor="@color/blue"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+            android:padding="20dp">
 
             <EditText
+                android:id="@+id/userP"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/usN"
+                android:layout_height="35dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/cusedittext"
-                android:layout_marginTop="20dp"
-                android:padding="8dp"
-                android:hint="Usuario"
                 android:drawableLeft="@drawable/baseline_person_24"
-                android:textColor="@color/black"
-                android:drawablePadding="12dp"/>
+                android:drawablePadding="12dp"
+                android:hint="Usuario"
+                android:padding="8dp"
+                android:textSize="15sp"
+                android:textColor="@color/black" />
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/coN"
+                android:layout_height="35dp"
+                android:id="@+id/conP"
                 android:background="@drawable/cusedittext"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:inputType="textPassword"
                 android:padding="8dp"
+                android:textSize="15sp"
                 android:hint="Contraseña"
                 android:drawableLeft="@drawable/baseline_lock_24"
                 android:textColor="@color/black"
@@ -62,34 +54,34 @@
             <Button
                 android:id="@+id/agregarButton"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
                 android:backgroundTint="@color/blue"
                 android:text="Agregar"
                 android:textAllCaps="false"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 app:cornerRadius="20dp" />
 
             <Button
                 android:id="@+id/borrarButton"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="7dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
                 android:backgroundTint="#115174"
                 android:text="Borrar"
                 android:textAllCaps="false"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 app:cornerRadius="20dp" />
 
             <Button
                 android:id="@+id/editarButton"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="7dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
                 android:backgroundTint="#03344F"
                 android:text="Editar datos"
                 android:textAllCaps="false"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 app:cornerRadius="20dp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -100,9 +92,10 @@
         android:orientation="vertical">
 
         <ListView
+            android:id="@+id/ListID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            
+
         </ListView>
     </LinearLayout>
 

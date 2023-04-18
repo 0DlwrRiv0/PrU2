@@ -12,6 +12,8 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.example.pru2.DB.DbUsuarios;
+import com.example.pru2.MyData.MyInfo;
+import com.example.pru2.PATD.PATD;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +22,12 @@ public class Registro extends AppCompatActivity {
 
     private Button guardarButton, iniciarButton;
     private EditText nombreTxt, usuarioTxt, contraTxt, correoTxt, telefTxt, edadTxt;
+    public static String nom, usu,password,email,tel,ed;
+    private static final String TAG = "Registrado";
+    public static String[] chec = new String[2];
+    public static List<MyInfo> list =new ArrayList<MyInfo>();
+    public static final String KEY = "+4xij6jQRSBdCymMxweza/uMYo+o0EUg";
+    public MyDesUtil myDesUtil= new MyDesUtil().addStringKeyBase64(KEY);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,21 +54,28 @@ public class Registro extends AppCompatActivity {
         guardarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nombre = nombreTxt.getText().toString();
-                String usuario = usuarioTxt.getText().toString();
-                String contrasena = contraTxt.getText().toString();
-                String correo = correoTxt.getText().toString();
-                String telefono = telefTxt.getText().toString();
-                boolean validacionInterfaz = validarCampos(nombre, usuario, contrasena, correo, telefono);
-                if(validacionInterfaz){
-                    DbUsuarios dbUsuarios = new DbUsuarios(Registro.this);
-                    long id = dbUsuarios.insertarUsuario(nombreTxt.getText().toString(), usuarioTxt.getText().toString(), contraTxt.getText().toString(),
-                            correoTxt.getText().toString(), telefTxt.getText().toString());
-                    if (id > 0){
-                        Toast.makeText(Registro.this, "Datos guardados", Toast.LENGTH_SHORT).show();
-                        limpiar();
+                MyInfo info= new MyInfo();
+                nom=String.valueOf(nombreTxt.getText());
+                usu= String.valueOf(usuarioTxt.getText());
+                password = String.valueOf(contraTxt.getText());
+                email= String.valueOf(correoTxt.getText());
+                tel = String.valueOf(telefTxt.getText());
+                ed = String.valueOf(edadTxt.getText());
+                if(usu.equals("") || nom.equals("") || password.equals("")|| email.equals("")) {
+                    Toast.makeText(Registro.this, "Campos vacios", Toast.LENGTH_SHORT).show();
+                }else{
+                    if(PATD.validarEmail(email)){
+                        PATD.fillInfo(info);
+                        DbUsuarios dbUsuarios = new DbUsuarios(Registro.this);
+                        long id = dbUsuarios.save(info);
+                        if (id>0){
+                            Toast.makeText(Registro.this, "Datos guardados", Toast.LENGTH_SHORT).show();
+                            limpiar();
+                    }else {
+                            Toast.makeText(Registro.this, "Error al guardar los datos", Toast.LENGTH_SHORT).show();
+                        }
                     }else{
-                        Toast.makeText(Registro.this, "Error al guardar los datos", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Registro.this, "Error con el correo", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -74,17 +89,4 @@ public class Registro extends AppCompatActivity {
         telefTxt.setText("");
         edadTxt.setText("");
     }
-
-    public boolean validarCampos(String usuario, String contrasenas, String nombre, String correo, String telefono){
-        if (usuario.isEmpty() || contrasenas.isEmpty() || nombre.isEmpty() || correo.isEmpty() || telefono.isEmpty()){
-            Toast.makeText(this, "Llene todos los campos", Toast.LENGTH_LONG).show();
-            return false;
-        } else if(usuario.length()<2 || contrasenas.length()<2){
-            Toast.makeText(this, "Deben ser mayor a dos caracteres", Toast.LENGTH_SHORT).show();
-            return false;
-        }else{
-            return true;
-        }
-    }
-
 }
