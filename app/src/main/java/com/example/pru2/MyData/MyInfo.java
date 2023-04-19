@@ -1,9 +1,10 @@
 package com.example.pru2.MyData;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MyInfo implements Serializable {
-
     private String nombre;
     private String user;
     private String contrasena;
@@ -59,7 +60,6 @@ public class MyInfo implements Serializable {
         this.edad = edad;
     }
 
-
     private int id_usr;
 
     public int getId_usr() {
@@ -69,7 +69,15 @@ public class MyInfo implements Serializable {
         this.id_usr = id_usr;
     }
 
+    public List<MyData> getContras() {
+        return contras;
+    }
 
+    public void setContras(List<MyData> contras) {
+        this.contras = contras;
+    }
+
+    private List<MyData> contras= new ArrayList<>();
 
 
 }

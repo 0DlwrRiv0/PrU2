@@ -24,7 +24,6 @@ public class Registro extends AppCompatActivity {
     private EditText nombreTxt, usuarioTxt, contraTxt, correoTxt, telefTxt, edadTxt;
     public static String nom, usu,password,email,tel,ed;
     private static final String TAG = "Registrado";
-    public static String[] chec = new String[2];
     public static List<MyInfo> list =new ArrayList<MyInfo>();
     public static final String KEY = "+4xij6jQRSBdCymMxweza/uMYo+o0EUg";
     public MyDesUtil myDesUtil= new MyDesUtil().addStringKeyBase64(KEY);

@@ -90,9 +90,12 @@ public class DbContraseñas extends DbHelper{
     }
 
     public boolean eliminarContacto(int id,String sitio,String contra) {
+
         boolean correcto = false;
+
         DbHelper dbHelper = new DbHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
+
         try {
             db.execSQL("DELETE FROM " + TABLE_CONTRASEÑAS+ " WHERE id = '" + id + "' AND contra ='" +contra+ "' AND user_c = '" +sitio+ "'");
             correcto = true;
@@ -102,6 +105,7 @@ public class DbContraseñas extends DbHelper{
         } finally {
             db.close();
         }
+
         return correcto;
     }
 

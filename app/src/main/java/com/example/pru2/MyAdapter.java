@@ -18,7 +18,6 @@ public class MyAdapter extends BaseAdapter implements Serializable {
     private List<MyData> list;
     private Context context;
     private LayoutInflater layoutInflater;
-    public static String TAG="me voy a volver loca ayuda dios";
 
     @Override
     public int getCount() {
@@ -48,9 +47,10 @@ public class MyAdapter extends BaseAdapter implements Serializable {
         TextView textView= null;
         TextView textView1= null;
         ImageView imageView = null;
-        view = layoutInflater.inflate(R.layout.Lista, null );
-        textView= view.findViewById(R.id.textViewU);
-        textView1=view.findViewById(R.id.textViewC);
+        view = layoutInflater.inflate(R.layout.activity_lista, null );
+        textView= view.findViewById(R.id.textU);
+        textView1=view.findViewById(R.id.textCon);
+        imageView = view.findViewById(R.id.imageView1);
         textView1.setText(String.valueOf(list.get(i).getContra()));
         textView.setText(String.valueOf(list.get(i).getUsuario()));
         return view;

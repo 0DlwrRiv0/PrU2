@@ -14,7 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
         app:cardCornerRadius="30dp"
-        app:cardElevation="20dp">
+        app:cardElevation="20dp"
+        app:cardBackgroundColor="@color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,14 +35,23 @@
                 android:textSize="38sp"
                 android:textStyle="bold" />
 
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/gatoo2"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"/>
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:id="@+id/userLog"
                 android:background="@drawable/cusedittext"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:padding="8dp"
                 android:hint="Usuario"
+                android:textColorHint="@color/black"
                 android:drawableLeft="@drawable/baseline_person_24"
                 android:textColor="@color/black"
                 android:drawablePadding="12dp"/>
@@ -50,6 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:id="@+id/passwordLog"
+                android:textColorHint="@color/black"
                 android:background="@drawable/cusedittext"
                 android:layout_marginTop="20dp"
                 android:inputType="textPassword"
@@ -63,11 +74,12 @@
                 android:id="@+id/loginButton"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:backgroundTint="@color/blue"
                 android:text="Ingresa"
                 android:textAllCaps="false"
-                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
                 app:cornerRadius="20dp" />
 
             <Button
@@ -78,7 +90,8 @@
                 android:backgroundTint="#115174"
                 android:text="Crear cuenta"
                 android:textAllCaps="false"
-                android:textSize="20sp"
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"
                 app:cornerRadius="20dp" />
 
             <Button
@@ -89,7 +102,8 @@
                 android:backgroundTint="#03344F"
                 android:text="Olvide mi contraseña"
                 android:textAllCaps="false"
-                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
                 app:cornerRadius="20dp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>

@@ -1,8 +1,13 @@
 package com.example.pru2;
 
+import static com.example.pru2.Permisos.Permisos.PERMISOS_CAMARA;
+import static com.example.pru2.Permisos.Permisos.PERMISOS_INTERNET;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +18,7 @@ import android.widget.Toolbar;
 import com.example.pru2.DB.DbHelper;
 import com.example.pru2.DB.DbUsuarios;
 import com.example.pru2.MyData.MyInfo;
+import com.example.pru2.Permisos.Permisos;
 
 import java.util.List;
 
@@ -21,14 +27,17 @@ public class Login extends AppCompatActivity {
     private EditText userTxt, passwordTxt;
     private Button buttonIngreso, buttonOlvide, buttonRegistro;
     public static final String KEY = "+4xij6jQRSBdCymMxweza/uMYo+o0EUg";
+    private static final int PERMISOS_CAMARA = 1, PERMISOS_INTERNET=2;
     public static List<MyInfo> list;
-    public static String json = null;
     public static String usr,pswd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        Permisos permisos = new Permisos();
+        permisos.Perm2(getApplicationContext(),Login.this);
+        permisos.Perm1(getApplicationContext(),Login.this);
 
         userTxt = findViewById(R.id.userLog);
         passwordTxt = findViewById(R.id.passwordLog);
@@ -80,6 +89,28 @@ public class Login extends AppCompatActivity {
             } else {
                 Toast.makeText(getApplicationContext(), "El usuario no ha sido encontrado", Toast.LENGTH_LONG).show();
             }
+        }
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        Permisos permisos = new Permisos();
+        switch (requestCode) {
+            case PERMISOS_CAMARA:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    permisos.camPerm(getApplicationContext());
+                } else {
+                    permisos.camnoPerm(getApplicationContext());
+                }
+                break;
+
+            case PERMISOS_INTERNET:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    permisos.intPerm(getApplicationContext());
+                } else {
+                    permisos.intnoPerm(getApplicationContext());
+                }
+                break;
         }
     }
 }

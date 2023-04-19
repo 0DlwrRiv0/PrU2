@@ -14,7 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
         app:cardCornerRadius="30dp"
-        app:cardElevation="20dp">
+        app:cardElevation="20dp"
+        app:cardBackgroundColor="@color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,7 +32,7 @@
                 android:text="Registro"
                 android:textAlignment="center"
                 android:textColor="@color/blue"
-                android:textSize="36sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
             
             <EditText
@@ -39,8 +40,9 @@
                 android:layout_height="40dp"
                 android:id="@+id/nombreID"
                 android:background="@drawable/cusedittext"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="15dp"
                 android:padding="8dp"
+                android:textColorHint="@color/black"
                 android:hint="Nombre"
                 android:drawableLeft="@drawable/baseline_person_24"
                 android:textColor="@color/black"
@@ -53,6 +55,7 @@
                 android:background="@drawable/cusedittext"
                 android:layout_marginTop="20dp"
                 android:padding="8dp"
+                android:textColorHint="@color/black"
                 android:hint="Usuario"
                 android:drawableLeft="@drawable/baseline_person_24"
                 android:textColor="@color/black"
@@ -66,6 +69,7 @@
                 android:layout_marginTop="20dp"
                 android:inputType="textPassword"
                 android:padding="8dp"
+                android:textColorHint="@color/black"
                 android:hint="Contraseña"
                 android:drawableLeft="@drawable/baseline_lock_24"
                 android:textColor="@color/black"
@@ -80,6 +84,7 @@
                 android:inputType="textEmailAddress"
                 android:padding="8dp"
                 android:hint="Correo"
+                android:textColorHint="@color/black"
                 android:drawableLeft="@drawable/baseline_alternate_email_24"
                 android:textColor="@color/black"
                 android:drawablePadding="12dp"/>
@@ -93,6 +98,7 @@
                 android:inputType="number"
                 android:padding="8dp"
                 android:hint="Número"
+                android:textColorHint="@color/black"
                 android:drawableLeft="@drawable/baseline_local_phone_24"
                 android:textColor="@color/black"
                 android:drawablePadding="12dp"/>
@@ -106,6 +112,7 @@
                 android:inputType="numberSigned"
                 android:padding="8dp"
                 android:hint="Edad"
+                android:textColorHint="@color/black"
                 android:drawableLeft="@drawable/baseline_calendar_month_24"
                 android:textColor="@color/black"
                 android:drawablePadding="12dp"/>
@@ -135,7 +142,7 @@
                     android:layout_marginLeft="12dp"
                     android:paddingRight="30dp"
                     android:textSize="16sp"
-                    android:textColor="#585858"/>
+                    android:textColor="@color/black"/>
 
                 <RadioButton
                     android:id="@+id/rb2"
@@ -143,30 +150,34 @@
                     android:layout_height="wrap_content"
                     android:text="Hombre"
                     android:textSize="16sp"
-                    android:textColor="#585858"/>
+                    android:textColor="@color/black"/>
             </RadioGroup>
 
             <Button
                 android:id="@+id/guardarID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="18dp"
                 android:backgroundTint="@color/blue"
                 android:text="Guardar"
                 android:textAllCaps="false"
-                android:textSize="20sp"
-                app:cornerRadius="20dp" />
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                app:cornerRadius="20dp"/>
+
 
             <Button
                 android:id="@+id/IniciarID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:backgroundTint="#115174"
                 android:text="Iniciar sesión"
                 android:textAllCaps="false"
-                android:textSize="20sp"
-                app:cornerRadius="20dp" />
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:cornerRadius="20dp"/>
+
 
 
         </LinearLayout>

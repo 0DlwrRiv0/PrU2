@@ -14,7 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
         app:cardCornerRadius="30dp"
-        app:cardElevation="20dp">
+        app:cardElevation="20dp"
+        android:backgroundTint="@color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,6 +24,13 @@
             android:background="@drawable/cusedittext"
             android:orientation="vertical"
             android:padding="20dp">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/perro" />
 
             <EditText
                 android:id="@+id/userP"
@@ -35,7 +43,8 @@
                 android:hint="Usuario"
                 android:padding="8dp"
                 android:textSize="15sp"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -49,7 +58,8 @@
                 android:hint="Contraseña"
                 android:drawableLeft="@drawable/baseline_lock_24"
                 android:textColor="@color/black"
-                android:drawablePadding="12dp"/>
+                android:drawablePadding="12dp"
+                android:textColorHint="@color/black"/>
 
             <Button
                 android:id="@+id/agregarButton"
@@ -60,6 +70,7 @@
                 android:text="Agregar"
                 android:textAllCaps="false"
                 android:textSize="15sp"
+                android:textColor="@color/white"
                 app:cornerRadius="20dp" />
 
             <Button
@@ -69,6 +80,7 @@
                 android:layout_marginTop="5dp"
                 android:backgroundTint="#115174"
                 android:text="Borrar"
+                android:textColor="@color/white"
                 android:textAllCaps="false"
                 android:textSize="15sp"
                 app:cornerRadius="20dp" />
@@ -81,6 +93,7 @@
                 android:backgroundTint="#03344F"
                 android:text="Editar datos"
                 android:textAllCaps="false"
+                android:textColor="@color/white"
                 android:textSize="15sp"
                 app:cornerRadius="20dp" />
         </LinearLayout>
@@ -94,7 +107,7 @@
         <ListView
             android:id="@+id/ListID"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="267dp">
 
         </ListView>
     </LinearLayout>
